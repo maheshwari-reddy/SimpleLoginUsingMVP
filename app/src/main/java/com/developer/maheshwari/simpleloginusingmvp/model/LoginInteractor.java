@@ -2,7 +2,7 @@ package com.developer.maheshwari.simpleloginusingmvp.model;
 
 import android.text.TextUtils;
 
-public class LoginInteractor implements ILoginInteractor {
+class LoginInteractor implements ILoginInteractor {
 
 
     @Override
@@ -10,9 +10,11 @@ public class LoginInteractor implements ILoginInteractor {
 
         if (TextUtils.isEmpty(email)) {
             listener.loginFailed("Please enter email address");
+            return;
         }
         if (TextUtils.isEmpty(password)) {
             listener.loginFailed("Please enter password");
+            return;
         } else {
             listener.loginSuccess();
         }
