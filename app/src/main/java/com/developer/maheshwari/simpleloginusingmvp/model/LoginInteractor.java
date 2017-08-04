@@ -14,12 +14,12 @@ class LoginInteractor implements ILoginInteractor {
             listener.loginFailed("Please enter email address");
             return;
         }
-        if (TextUtils.isEmpty(password)) {
-            listener.loginFailed("Please enter password");
-            return;
-        }
         if (!TextUtils.isEmpty(email) && !Utility.isValidEmail(email)) {
             listener.loginFailed("Please enter valid email address");
+            return;
+        }
+        if (TextUtils.isEmpty(password)) {
+            listener.loginFailed("Please enter password");
             return;
         }
         if (!TextUtils.isEmpty(password) && password.length() < 6) {
