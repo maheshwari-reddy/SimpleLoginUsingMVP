@@ -3,6 +3,7 @@ package com.developer.maheshwari.simpleloginusingmvp.view.activity;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -31,7 +32,7 @@ public class LoginActivity extends AppCompatActivity implements ILoginView {
     }
 
     @OnClick(R.id.btnLogin)
-    public void attemptLogin() {
+    public void attemptLogin(View view) {
         presenter.login(email.getText().toString().trim(), password.getText().toString().trim());
     }
 
